@@ -1,5 +1,6 @@
 - unix
 - bash
 - git
+- javaScript
 - html
 - css
