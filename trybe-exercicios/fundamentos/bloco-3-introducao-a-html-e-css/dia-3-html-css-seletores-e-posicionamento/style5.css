@@ -19,10 +19,24 @@ ol.ordained-list li {
   font-weight: bold;
 }
 
-ul.programming-language li {
+.programming-language .blue {
   color: blue;
 }
-
+.programming-language .rosa {
+  color: pink;
+}
 ul.sites li:hover {
  font-weight: bold;
+}
+.sites .laranja:hover {
+ color: orange;
+}
+.sites .verde:hover {
+  color: green;
+}
+.sites .preta:hover {
+  color: black;
+}
+.sites .amarela:hover {
+  color: yellow;
 }
