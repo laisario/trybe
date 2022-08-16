@@ -1,0 +1,28 @@
+ol li {
+  background-color: yellow;
+  text-transform: uppercase;
+}
+
+.header {
+  color: red; 
+}
+
+h1.header {
+  font-size: 40px;
+  border: 1px solid black;
+}
+
+li {
+  font-size: 20px;
+}
+ol.ordained-list li {
+  font-weight: bold;
+}
+
+ul.programming-language li {
+  color: blue;
+}
+
+ul.sites li:hover {
+ font-weight: bold;
+}
