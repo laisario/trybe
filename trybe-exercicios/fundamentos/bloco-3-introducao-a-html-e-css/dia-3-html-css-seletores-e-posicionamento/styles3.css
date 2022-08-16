@@ -1,0 +1,15 @@
+h1, p {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+li:hover {
+  background-color: blueviolet;
+}
+li:active {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+li {
+  list-style: none;
+}
