@@ -1,3 +1,4 @@
+/*
 let info = {
   personagem: 'Margarida',
   origem: 'Pato Donald',
@@ -30,3 +31,37 @@ for (let index in info) {
     console.log(info[index] + ' e ' + info2[index])
   }
 }
+*/
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas'
+    }
+  ]
+}
+console.log(
+  'O livro favorita de ' +
+    leitor.nome +
+    ' ' +
+    leitor.sobrenome +
+    ' se chama ' +
+    leitor.livrosFavoritos[0].titulo
+)
+leitor.livrosFavoritos.push({
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editora: 'Rocco'
+})
+console.log(leitor.livrosFavoritos)
+console.log(
+  leitor.nome +
+    ' tem dois livros favoritos: ' +
+    leitor.livrosFavoritos[0].titulo +
+    ' e ' +
+    leitor.livrosFavoritos[1].titulo
+)
