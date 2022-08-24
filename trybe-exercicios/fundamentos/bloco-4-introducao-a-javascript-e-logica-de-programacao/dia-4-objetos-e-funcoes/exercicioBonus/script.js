@@ -60,30 +60,17 @@ for (let valores in moradores) {
 }
 
 */
-const basket = [
-  'Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva', 'Laranja',
-  'Jaca', 'Pera', 'Melancia', 'Uva', 'Laranja', 'Melancia',
-  'Banana', 'Uva', 'Pera', 'Abacate', 'Laranja', 'Abacate',
-  'Banana', 'Melancia', 'Laranja', 'Laranja', 'Jaca', 'Uva',
-  'Banana', 'Uva', 'Laranja', 'Pera', 'Melancia', 'Uva',
-  'Jaca', 'Banana', 'Pera', 'Abacate', 'Melancia', 'Melancia',
-  'Laranja', 'Pera', 'Banana', 'Jaca', 'Laranja', 'Melancia',
-  'Abacate', 'Abacate', 'Pera', 'Melancia', 'Banana', 'Banana',
-  'Abacate', 'Uva', 'Laranja', 'Banana', 'Abacate', 'Uva',
-  'Uva', 'Abacate', 'Abacate', 'Melancia', 'Uva', 'Jaca',
-  'Uva', 'Banana', 'Abacate', 'Banana', 'Uva', 'Banana',
-  'Laranja', 'Laranja', 'Jaca', 'Jaca', 'Abacate', 'Jaca',
-  'Laranja', 'Melancia', 'Pera', 'Jaca', 'Melancia', 'Uva',
-  'Abacate', 'Jaca', 'Jaca', 'Abacate', 'Uva', 'Laranja',
-  'Pera', 'Melancia', 'Jaca', 'Pera', 'Laranja', 'Jaca',
-  'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
-  'Banana', 'Pera', 'Abacate', 'Uva',
-];
-
-let cesta = {}
-for (let fruit of basket) {
-  if (basket[fruit]) {
-    cesta +=
+//Crie uma função chamada arrayOfNumbers que receberá a variável vector como //parâmetro. Através de um loop for, percorra essa variável, busque os números pares e os adicione a um novo array que deverá ser retornado ao final pela pela função.
+//let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+function arrayOfNumbers(variavel) {
+  let numPar = []
+  for (let i = 0; i < variavel.length; i += 1) {
+    for (let index = 0; index < variavel[i].length; i += 1) {
+      if (variavel[i] % 2 === 0) {
+        numPar += i
+      }
+    }
   }
+  return numPar
 }
-console.log(cesta)
+console.log()
