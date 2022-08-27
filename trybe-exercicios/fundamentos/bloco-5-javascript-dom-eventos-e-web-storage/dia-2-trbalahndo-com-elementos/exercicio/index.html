@@ -104,8 +104,16 @@
       insertTextList()
       for (let i = 1; i <= 3; i += 1) {
         let elementsH3 = document.createElement('h3')
+        elementsH3.className = 'description'
         newMain.appendChild(elementsH3)
       }
+      newH1.className = 'title'
+      newMain.removeChild(leftSection)
+      rightSection.style.marginRight = 'auto'
+      newMain.style.backgroundColor = 'green'
+      const liElementNovo = document.querySelector('ul')
+      liElementNovo.lastChild.remove()
+      liElementNovo.lastChild.remove()
     </script>
   </body>
 </html>
