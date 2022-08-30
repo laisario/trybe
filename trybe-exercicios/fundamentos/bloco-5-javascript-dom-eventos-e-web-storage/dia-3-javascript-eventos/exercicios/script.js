@@ -71,3 +71,28 @@ function changeBackground() {
 }
 
 buttonHoliday.addEventListener('click', changeBackground)
+
+function createButtonFriday(nomeButton) {
+  let buttonContainer = document.getElementsByClassName('buttons-container')[0]
+  let buttonFriday = document.createElement('button')
+  buttonFriday.setAttribute('id', 'bth-friday')
+  buttonFriday.innerHTML = nomeButton
+  buttonContainer.appendChild(buttonFriday)
+}
+createButtonFriday('Sexta-Feira')
+
+let buttonFriday = document.getElementById('bth-friday')
+
+function changeText() {
+  let fridayDay = document.getElementsByClassName('friday')
+
+  for (let i = 0; i < fridayDay.length; i += 1) {
+    if (fridayDay[i].innerHTML !== 'SEXTOU') {
+      fridayDay[i].innerHTML = 'SEXTOU'
+    } else {
+      let fridayNumbers = [4, 11, 18, 25]
+      fridayDay[i].innerHTML = fridayNumbers[i]
+    }
+  }
+}
+buttonFriday.addEventListener('click', changeText)
