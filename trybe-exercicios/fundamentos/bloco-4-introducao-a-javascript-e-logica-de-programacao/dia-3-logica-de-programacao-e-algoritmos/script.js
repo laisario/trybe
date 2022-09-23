@@ -1,31 +1,26 @@
-/*let fatorial = 1
+/*let fatoracao = 1
 for (let i = 10; i > 0; i -= 1) {
-  fatorial = fatorial * i
+  fatoracao *= i
+  console.log(fatoracao)
 }
-console.log(fatorial)
---------------------------------------------------------------------
-let word = 'laisa'
+let word = 'tryber'
 for (let i = word.length - 1; i >= 0; i -= 1) {
   console.log(word[i])
 }
---------------------------------------------------------------
-let array = ['java', 'javascript', 'python', 'html', 'css']
-let biggestWord = array[0]
-for (let i = 0; i < array.length; i += 1) {
-  if (array[i].length > biggestWord.length) {
-    biggestWord = array[i]
-  }
-}
-console.log(biggestWord)
-
-let smallestWord = array[0]
-for (let index = 0; index < array.length; index += 1) {
-  if (array[index].length < smallestWord.length) {
-    smallestWord = array[index]
-  }
-}
-console.log(smallestWord)
----------------------------------------------------------------
 */
-for (let i = 2; i <= 50; i += 1) {
-  let numeroPrimo = true;
+let array = ['java', 'javascript', 'python', 'html', 'css']
+let max = ''
+let min = ''
+for (let i = 0; i < array.length; i += 1) {
+  if (array[i] > max) {
+    max = array[i]
+  }
+}
+for (let i = 0; i < array.length; i += 1) {
+  if (array[i] < min) {
+    min = array[i]
+  }
+}
+
+console.log(max)
+console.log(min)
