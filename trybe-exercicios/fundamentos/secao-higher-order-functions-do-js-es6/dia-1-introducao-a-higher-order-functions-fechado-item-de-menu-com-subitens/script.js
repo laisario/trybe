@@ -1,7 +1,7 @@
 //Crie uma função que retorne um objeto no formato { nomeCompleto, email } representando uma nova pessoa contratada. Passe sua função como parâmetro da HOF newEmployees para criar cada pessoa contratada em seu respectivo id. A sua função deve receber como parâmetro o nome completo da pessoa funcionária e, a partir dele, gerar automaticamente um email no formato nome_da_pessoa@trybe.com.
 const newEmployeesInformation = (nomeCompleto) => {
   const person = {
-    name: nomeCompleto,
+    name: nomeCompleto.replace(' ', '.').toLowerCase(),
     email: `${nomeCompleto}@trybe.com`,
   };
   return person;
@@ -26,3 +26,31 @@ const checaNumero = (numero) => {
 const resultadoSorteio = (numeroApostado, func) => {
   return func(numeroApostado);
 };
+// O primeiro será um array de respostas corretas (soluções);
+// O segundo será um array contendo as respostas fornecidas por uma pessoa estudante;
+// O terceiro é uma função que compara os dois arrays e então dá uma pontuação baseada nos acertos. Para isso, essa função usará os seguintes critérios:
+// Uma resposta correta adiciona 1 ponto à pontuação final;
+// A ausência de uma resposta não altera a pontuação (quando for “N.A”);
+// Uma resposta incorreta reduz a pontuação final em 0.5 ponto.
+// Ao final, a HOF deve retornar o total de pontos obtidos através das respostas fornecidas pela pessoa estudante. Utilize os seguintes arrays:
+
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+const corretorRespostas = (respostasCorretas, respostasAluno) => {
+  let pontos = 0;
+  for (let i = 0; i < respostasCorretas.length; i += 1) {
+    for (let index = 0; index < respostasAluno.length; index += 1) {
+      if (respostasCorretas[i] === respostasAluno[index]) {
+        pontos += 1;
+      } else if (respostasAluno[index] === 'N.A') {
+        pontos = pontos;
+      }
+      pontos -= 0.5;
+    }
+  }
+};
+const corretorAutomatico = (
+  respostasCorretas,
+  respostasAluno,
+  comparacaoRespostas
+) => {};
