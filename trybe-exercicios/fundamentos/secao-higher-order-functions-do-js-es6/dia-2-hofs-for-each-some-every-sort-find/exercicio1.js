@@ -60,9 +60,56 @@ const books = [
     releaseYear: 1928,
   },
 ];
-books.find((element) => {
-  if (element.author.birthYear === 1947) {
-    console.log(element.name);
+// function authorBornIn1947(array) {
+//   if (array.author.birthYear === 1947) {
+//     console.log(array.name);
+//   }
+// }
+// books.find(authorBornIn1947);
+
+// function smallerName(array) {
+//   let nameBook;
+//   array.sort((a, b) => {
+//     return a.name.length - b.name.length;
+//   });
+//   nameBook = array[0].name;
+//   return nameBook;
+// }
+// console.log(smallerName(books));
+
+// function getNamedBook(array) {
+//   const elementoQueAchou = array.find((element) => {
+//     return element.name.length === 26;
+//   });
+//   return elementoQueAchou.name;
+// }
+// console.log(getNamedBook(books));
+
+// function booksOrderedByReleaseYearDesc(array) {
+//   array.sort((a, b) => {
+//     return b.releaseYear - a.releaseYear;
+//   });
+//   return array;
+// }
+// console.log(booksOrderedByReleaseYearDesc(books));
+
+// function everyoneWasBornOnSecXX(array) {
+//   return array.every((element) => element.author.birthYear >= 1900);
+// }
+// console.log(everyoneWasBornOnSecXX(books));
+
+// Faça uma função que retorne true, caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
+
+// 1 forma de fazer: ordernar os birthYears e fazer um for para verificar se o index atual é igual ao posterior.
+function authorUnique(array) {
+  array.sort((a, b) => {
+    return a.author.birthYear - b.author.birthYear;
+  });
+  for (let i = 0; i < array.length - 1; i += 1) {
+    if (array[i].author.birthYear === array[i + 1].author.birthYear) {
+      return false;
+    }
   }
-});
-// Adicione o código do exercício aqui:
+  return true;
+}
+console.log(authorUnique(books));
