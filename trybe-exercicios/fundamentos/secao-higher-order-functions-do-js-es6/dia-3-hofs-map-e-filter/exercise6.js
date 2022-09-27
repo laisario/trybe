@@ -1,4 +1,3 @@
-// Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
 const books = [
   {
     id: 1,
@@ -61,12 +60,11 @@ const books = [
     releaseYear: 1928,
   },
 ];
-function fantasyOrScienceFictionAuthors(array) {
-  const arrayFiltrado = array.filter((element) => {
-    return (
-      element.genre === 'Fantasia' || element.genre === 'Ficção Científica'
-    );
+//Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+function oldBooks(array) {
+  const livrosComMaisDe60 = array.filter((element) => {
+    return element.releaseYear < 1962;
   });
-  return arrayFiltrado.map((element) => element.author.name).sort();
+  return livrosComMaisDe60.map((element) => element.name);
 }
-fantasyOrScienceFictionAuthors(books);
+console.log(oldBooks(books));
