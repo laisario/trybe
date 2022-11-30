@@ -31,13 +31,14 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="random">Random color</button>
     </div>
     <script>
       const INITIAL_STATE = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
-      const reducer = (state = INITIAL__STATE, action) => {
+      const reducer = (state = INITIAL_STATE, action) => {
         switch (action.type) {
           case "NEXT_COLOR":
             return {
@@ -50,15 +51,24 @@
               ...state,
               index: state.index > 0 && state.index - 1, 
             }
+          case "RANDOM_COLOR":
+          return {
+              ...state,
+              colors: [...state.colors, criarCor()],
+              index: colors[colors.length -1 ], 
+            }
           default:
             return state;
         }
       };
+      const store = Redux.createStore(reducer);
       const buttonPrevColor = document.getElementById('previous');
       const buttonNextColor = document.getElementById('next');
+      const buttonRandomColor = document.getElementById('random');
 
       const nextColor = { type: "NEXT_COLOR" };
-      const prevColor = { type: "NEXT_COLOR" };
+      const prevColor = { type: "PREVIOUS_COLOR" };
+      const randomColor = { type: "RANDOM_COLOR" };
 
 
       buttonNextColor.addEventListener('click', () => {
@@ -67,8 +77,29 @@
       buttonPrevColor.addEventListener('click', () => {
         store.dispatch(prevColor)
       });
+      buttonRandomColor.addEventListener('click', () => {
+        store.dispatch(randomColor)
+      });
 
-      const store = Redux.createStore(reducer);
+      store.subscribe(() => {
+        const p = document.getElementById('value');
+        const color = store.getState().colors;
+        const index = store.getState().index;
+        const div = document.getElementById('container');
+        p.innerHTML = color[index];
+        div.style.backgroundColor = color[index];
+      })
+
+      function criarCor() {
+        const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let cor = '#';
+        const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+        for (let i = 0; i < 6; i += 1) {
+        cor += oneChar[aleatorio()];
+        }
+        return cor;
+      }
+      
     </script>
   </body>
 </html>
