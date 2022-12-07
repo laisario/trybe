@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import './App.css';
+import Header from './components/Header';
+import { fetchCharacters } from './redux/actions';
+class App extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchCharacters())
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    const { characters, search } = this.props;
+    const { fullName, title, family, imageUrl } = characters.find(character => character.fullName.toLowerCase().includes(search.toLowerCase())) || {}
+    return (
+      <div className='tudo'>
+        <Header className='header' />
+        <h2>Personagem:</h2>
+        <br />
+        <div className='personagem-container'>
+          <div className='text-container'>
+            <p>Nome: { fullName }</p>
+            <p>Título: { title }</p>
+            <p>Família: { family }</p>
+          </div>
+          <div className='image-container'>
+            <img className='image' src={imageUrl} alt={`Personagem ${fullName}`} />
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+	characters: state.characters,
+  search: state.search,
+});
+
+export default connect(mapStateToProps)(App);
