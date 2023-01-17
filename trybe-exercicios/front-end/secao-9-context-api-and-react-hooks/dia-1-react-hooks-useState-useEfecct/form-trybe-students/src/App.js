@@ -39,7 +39,7 @@ function App() {
         name="modulo"
         onChange={ ({target}) => setModulo(target.value) }
       />
-      <label for="fundamentos">Fundamentos</label>
+      <label htmlFor="fundamentos">Fundamentos</label>
 
       <input
         type="radio"
@@ -49,7 +49,7 @@ function App() {
         name="modulo"
         onChange={ ({target}) => setModulo(target.value) }
       />
-      <label for="front-end">Front-end</label>
+      <label htmlFor="front-end">Front-end</label>
       <input
         type="radio"
         id="back-end" 
@@ -58,7 +58,7 @@ function App() {
         name="modulo"
         onChange={ ({target}) => setModulo(target.value) }
       />
-      <label for="back-end">Back-end</label>
+      <label htmlFor="back-end">Back-end</label>
       <input
         type="radio"
         id="ciencia-da-computacao"
@@ -67,7 +67,7 @@ function App() {
         name="modulo"
         onChange={ ({target}) => setModulo(target.value) }
       />
-      <label for="ciencia-da-computacao">Ciência da computação</label>
+      <label htmlFor="ciencia-da-computacao">Ciência da computação</label>
       <button
         type="submit"
       >Enviar</button>
